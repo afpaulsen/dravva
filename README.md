@@ -1,7 +1,7 @@
 # dravva
 Draw a map of your strava data
 
-#How to
+# How to
 todo
 
 ## Docker commands
