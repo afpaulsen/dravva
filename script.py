@@ -13,12 +13,12 @@ for filename in glob.glob(os.getcwd() + '/export/activities/*.gpx'):
 	print("Reading " + filename)
 	gpx_file = open(filename, 'r')
 	gpx = gpxpy.parse(gpx_file)
-	time = "N/A"
-	if gpx:
-		if gpx.tracks:
-			if gpx.tracks[0].segments:
-				if gpx.tracks[0].segments[0].points:
-					time = gpx.tracks[0].segments[0].points[0].time
+
+	try:
+		time = gpx.tracks[0].segments[0].points[0].time
+	except (IndexError, KeyError) as e:
+		time = "N/A"
+
 	points = []
 	for track in gpx.tracks:
 		for segment in track.segments:        
