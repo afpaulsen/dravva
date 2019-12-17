@@ -7,7 +7,8 @@ import os
 
 print ("Running " + __file__)
 
-my_map = folium.Map( zoom_start=14,tiles='http://tile.stamen.com/toner-background/{z}/{x}/{y}.png',attr="<a href=http://maps.stamen.com/>Stamen</a>")
+#my_map = folium.Map( zoom_start=14,tiles='http://tile.stamen.com/toner-background/{z}/{x}/{y}.png',attr="<a href=http://maps.stamen.com/>Stamen</a>")
+my_map = folium.Map( zoom_start=14,tiles='http://tile.stamen.com/watercolor/{z}/{x}/{y}.png',attr="<a href=http://maps.stamen.com/>Stamen</a>")
 
 for filename in glob.glob(os.getcwd() + '/export/activities/*.gpx'):
 	print("Reading " + filename)
